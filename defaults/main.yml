@@ -1,10 +1,13 @@
 ---
-google_chrome_stable_enabled: yes                       # Enable module
-google_talkplugin_enabled: no                       # Disbale module
+google_chrome_stable_enabled: yes   # Enable - module will manage Google Chrome.
+google_talkplugin_enabled: no       # Disbale - module will not manage Google Talk Plugin.
 # Package states: present or installed or latest
-google_agent_pkg_state: present
+# google_agent_pkg_state: present         use: google_apps_remove insted.
 # Repository states: present or absent
-google_agent_repository_state: present
+# google_agent_repository_state: present  use: google_apps_remove insted.
+
+# By default this role will install enabled googole apps - unless ...
+google_apps_remove: no        # It will remove currently install packages and repositories.
 
 docker_files_generated_directory         : "roles/chrome"
 docker_volume_directory                  : ""
